@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ar" dir="rtl"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>برنامج التدريب</title> 
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .nav button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .nav button:hover {
+            background-color: #0056b3;
+        }
+        .day {
+            display: none;
+        }
+        .exercise {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .exercise:hover {
+            background-color: #e9ecef;
+        }
+    </style> 
+ </head> 
+ <body> 
+  <div class="container"> 
+   <h1>برنامج التدريب الأسبوعي</h1> 
+   <div class="nav"> <button onclick="showDay('day1')">اليوم الأول</button> <button onclick="showDay('day2')">اليوم الثاني</button> <button onclick="showDay('day3')">اليوم الثالث</button> <button onclick="showDay('day4')">اليوم الرابع</button> 
+   </div> 
+   <div id="day1" class="day"> 
+    <h3>اليوم الأول</h3> 
+    <div class="exercise" onclick="showMessage('دبني عادي')">
+     Competition Squat
+    </div> 
+    <div class="exercise" onclick="showMessage('بنج عادي')">
+     Paused Bench
+    </div> 
+    <div class="exercise" onclick="showVideo('https://vt.tiktok.com/ZSMNtpFLJ/')">
+     Overhead Press
+    </div> 
+    <div class="exercise" onclick="showVideo('https://vt.tiktok.com/ZSMNtquVr/')">
+     Bent Over Row
+    </div> 
+    <div class="exercise" onclick="showMessage('باك ارج')">
+     GHR Back Extensions
+    </div> 
+   </div> 
+   <div id="day2" class="day"> 
+    <h3>اليوم الثاني</h3> 
+    <div class="exercise" onclick="showMessage('سحب عادي')">
+     Competition Deadlift
+    </div> 
+    <div class="exercise" onclick="showMessage('بنج عادي وتوقف ٣ ثواني في الاسفل')">
+     3ct Pause Bench
+    </div> 
+    <div class="exercise" onclick="showMessage('دبني عادي لكن البار على الرقبه')">
+     SSB or Front or High Bar Pause Squat
+    </div> 
+    <div class="exercise" onclick="showVideo('https://vt.tiktok.com/ZSMNtQTbe/')">
+     Wide Grip Seated Row
+    </div> 
+   </div> 
+   <div id="day3" class="day"> 
+    <h3>اليوم الثالث</h3> 
+    <div class="exercise" onclick="showVideo('https://vt.tiktok.com/ZSMNtT1Sj/')">
+     Pin Squat
+    </div> 
+    <div class="exercise" onclick="showMessage('بنج نصفي')">
+     2Board Press
+    </div> 
+    <div class="exercise" onclick="showVideo('https://vt.tiktok.com/ZSMNnLaT1/')">
+     1-Arm DB Rows
+    </div> 
+    <div class="exercise" onclick="showVideo('https://youtube.com/watch?v=3dNFPGNM9Es&amp;si=M_IcH4e-ckpCrVGK')">
+     Birddogs
+    </div> 
+   </div> 
+   <div id="day4" class="day"> 
+    <h3>اليوم الرابع</h3> 
+    <div class="exercise" onclick="showMessage('سحب عادي توقف ٢ عند الركبه')">
+     2ct Pause Deadlift
+    </div> 
+    <div class="exercise" onclick="showMessage('بنج عادي بدون توقف فقط لمسه سريعه')">
+     Rep Bench (Touch and Go)
+    </div> 
+    <div class="exercise" onclick="showVideo('https://vt.tiktok.com/ZSMNt7yRP/')">
+     SLDL
+    </div> 
+    <div class="exercise" onclick="showMessage('عقله')">
+     Vertical Pull of choice
+    </div> 
+    <div class="exercise" onclick="showMessage('اي تمرين تراي')">
+     Tricep movement of choice
+    </div> 
+   </div> 
+  </div> 
+  <script>
+    function showMessage(message) {
+        alert(message);
+    }
+
+    function showVideo(url) {
+        window.open(url, '_blank');
+    }
+
+    function showDay(dayId) {
+        const days = document.querySelectorAll('.day');
+        days.forEach(day => day.style.display = 'none');
+        document.getElementById(dayId).style.display = 'block';
+    }
+
+    // Show the first day by default
+    window.onload = function() {
+        showDay('day1');
+    };
+</script> 
+ 
+</body></html>
